@@ -1,0 +1,44 @@
+
+<body>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="LabelLogIn">Log In</h3>
+			</div>
+			<div class="modal-body">
+				<p>Welcome: {{user.username}}</p>
+				<form name="form">
+					<div class="form-group">
+						<label for="username" class="form-labels">*UserName:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="username"
+								id="username" ng-model="user.username" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="form-labels">*Password:</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" name="password"
+								id="password" ng-model="user.password" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="login-button">
+							<button type="submit" class='btn' ng-disabled="form.$invalid"
+								ng-click="login()">Login</button>
+						</div>
+					</div>
+				</form>
+				<p style="color: red">{{msgtxterror}}</p>
+				<label for="register" class="form-labels">Register</label> <a
+					href="" ng-click="registerpage()">Click Here</a>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+
+
+
+<!-- data-ng-disabled="form.$invalid ||dataLoading" -->

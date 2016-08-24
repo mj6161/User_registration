@@ -1,0 +1,83 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3 class="modal-title">Register</h3>
+		</div>
+		<div class="modal-body">
+			<form name="form">
+				<div class="form-group">
+					<label for="username" class="form-labels">*First name:</label>
+					<div class="col-sm-9">
+						<input type="text" name="firstName" id="firstName"
+							ng-model="user.firstname"
+							ng-keyup="validate('firstName','firstNameError')" required>
+						<div id="firstNameError"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="username" class="form-labels">*Last name:</label>
+					<div class="col-sm-9">
+						<input type="text" name="lastName" id="lastName"
+							ng-model="user.lastname"
+							ng-change="validate('lastName','lastNameError')" required>
+						<div id="lastNameError"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="username" class="form-labels">*Username:</label>
+					<div class="col-sm-9">
+						<input type="text" name="userName" id="username"
+							ng-model="user.username"
+							ng-keyup="validateUsername('username','userNameError')" required>
+						<div id="userNameError"></div>
+					</div>
+				</div>
+				<span id="uservalidate" style="color: red"></span>
+				<div class="form-group">
+					<label for="designation" class="form-labels">*Designation:</label>
+					<div class="col-sm-9">
+						<input type="text" name="designation" id="designation"
+							ng-model="user.designation"
+							ng-keyup="validate('designation','designationError')" required>
+						<div id="designationError"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="phone_no" class="form-labels">*Phone No:</label>
+					<div class="col-sm-9">
+						<input type="number" name="phone_no" id="phone_no"
+							max="9999999999" min="100000000" ng-model="user.phone_no"
+							required>
+					</div>
+				</div>
+				<span id="phone" style="color: red"></span>
+				<div class="form-group">
+					<label for="password" class="form-labels">*Password:</label>
+					<div class="col-sm-9">
+						<input type="password" name="password" id="password" maxlength="8"
+							ng-model="user.password" required>
+					</div>
+				</div>
+				<span id="pass" style="color: red"></span>
+				<div class="form-group">
+					<label for="retypepassword" class="form-labels">*Retype
+						Password:</label>
+					<div class="col-sm-9">
+						<input type="password" name="retypepassword" id="retypepassword"
+							maxlength="8" ng-model="user.retypepassword"
+							ng-blur="passwordcheck(password,retypepassword)" required>
+					</div>
+				</div>
+				<span id="retype" style="color: red"></span>
+				<div class="form-group">
+					<div class="login-button">
+						<button type="submit" class='btn' ng-click="register()">Register</button>
+					</div>
+				</div>
+				<a href="#/login">Cancel</a>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

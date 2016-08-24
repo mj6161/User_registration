@@ -1,0 +1,72 @@
+
+<body>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title">Welcome {{userData.username}}</h3>
+			</div>
+			<div class="modal-body">
+				<form name="form">
+					<div class="form-group">
+						<label for="username" class="form-labels">First name:</label>
+						<div class="col-sm-9">
+							<input type="text" name="firstName" id="firstName"
+								value="{{userData.firstName}}" readonly></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="username" class="form-labels">Last name:</label>
+						<div class="col-sm-9">
+							<input type="text" name="lastName" id="lastName"
+								value="{{userData.lastName}}" readonly></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="username" class="form-labels">Username:</label>
+						<div class="col-sm-9">
+							<input type="text" name="username" id="username"
+								value="{{userData.username}}" readonly></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="designation" class="form-labels">*Designation:</label>
+						<div class="col-sm-9">
+							<input type="text" name="designation" id="designation"
+								ng-keyup="validate('designation','designationError')"
+								ng-model="user.designation"
+								ng-init="user.designation=userData.designation" readonly></input>
+							<div id="designationError"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="phoneno" class="form-labels">*Phone No:</label>
+						<div class="col-sm-9">
+							<input type="number" name="phone_no" id="phone_no"
+								max="9999999999" min="100000000" ng-model="user.phone_no"
+								value="{{userData.phone_no}}" readonly></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="form-labels">*Password:</label>
+						<div class="col-sm-9">
+							<input type="password" name="password" id="password"
+								maxlength="8" ng-model="user.password"
+								ng-init="user.password=userData.password" readonly></input>
+						</div>
+					</div>
+					<span id="pass" style="color: red"></span>
+
+					<div class="form-group">
+						<div class="login-button">
+							<button type="submit" class='btn' ng-click='editUser()'>Edit</button>
+							<button type="submit" class='btn' ng-click='updateUser()'>Update</button>
+						</div>
+					</div>
+					<a href="" ng-click="logout()">Logout</a>
+				</form>
+				<p style="color: green">{{msgtxterror}}</p>
+			</div>
+		</div>
+	</div>
+
+</body>
